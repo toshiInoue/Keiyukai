@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>チェックリスト</title>
+</head>
+<body>
+    <h1>チェックリスト</h1>
+    <form method="POST">
+        {% for question in ["シャンプー", "ドライヤー", "つり革", "携帯電話", "書字"] %}
+            <p>{{ question }}</p>
+            <input type="radio" name="{{ question }}" value="5" required> 非常に困難<br>
+            <input type="radio" name="{{ question }}" value="3"> やや困難<br>
+            <input type="radio" name="{{ question }}" value="1"> 問題なし<br>
+            <input type="radio" name="{{ question }}" value="0"> しない<br><br>
+        {% endfor %}
+        <button type="submit">送信</button>
+    </form>
+</body>
+</html>
